@@ -1,7 +1,7 @@
 {
     "headers": [
         {
-            "source": "/api/(.*)",
+            "source": "/records/(.*)",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Credentials",
