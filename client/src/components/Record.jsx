@@ -17,7 +17,7 @@ export default function Record() {
             if (!id) return;
             setIsNew(false);
             const response = await fetch(
-                `http://localhost:5050/record/${params.id.toString()}`
+                `https://mern-employees.vercel.app/record/${params.id.toString()}`
             );
             if (!response.ok) {
                 const message = `An error has occurred: ${response.statusText}`;
@@ -53,7 +53,7 @@ export default function Record() {
             let response;
             if (isNew) {
                 // if adding a new record we will POST to /record.
-                response = await fetch("http://localhost:5050/record", {
+                response = await fetch("https://mern-employees.vercel.app/record", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export default function Record() {
                 });
             } else {
                 // if updating a record we will PATCH to /record/:id.
-                response = await fetch(`http://localhost:5050/record/${params.id}`, {
+                response = await fetch(`https://mern-employees.vercel.app/record/${params.id}`, {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json",
